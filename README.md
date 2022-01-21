@@ -1,6 +1,6 @@
 # hamburgueria api
 
-A API possui 4 endpoints, register, login, endereço e produtos
+A API possui 4 endpoints, register, login, products e cart
 
 ### Cadastro
 
@@ -22,16 +22,6 @@ A realizção do login deve ser feita de maneira análoga ao de registro, passan
 "password":"123456"<br/>
 }<br/>
 
-### Endereço
-
-POST /adsres <br/>
-
-O cadastro do endereço deve ser feito passando as informações:<br/>
-{<br/>
-"addres": "Av. Afonso Penna",<br/>
-"number":"726"<br/>
-}<br/>
-
 ### Produtos
 
 -> Carregamento
@@ -39,3 +29,23 @@ O cadastro do endereço deve ser feito passando as informações:<br/>
 GET /produtos <br/>
 
 É necessário a autorização pelo token para visualização<br/>
+
+### Cart
+
+-> Carregamento
+
+GET /cart <br/>
+
+É necessário autorização para acessar esse recurso<br/>
+
+-> Adicionar item ao carrinho
+
+POST /cart <br/>
+
+O cadastro do item ao carrinho requer autorização e deve ser feito passando as informações:<br/>
+{<br/>
+"title": "Hamburguer",<br/>
+"id": 1,<br/>
+"price": 19,90,<br/>
+"url_image": "https://image.com.br"<br/>
+}<br/>
